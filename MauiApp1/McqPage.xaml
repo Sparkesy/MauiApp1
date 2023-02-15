@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.McqPage"
+             Title="McqPage" NavigationPage.HasBackButton="True">
+    <VerticalStackLayout>
+
+        <StackLayout>
+            <StackLayout BackgroundColor="AliceBlue" Padding="0,10">
+                <Label Text="Your Score" HorizontalTextAlignment="Center" FontSize="34" FontAttributes="Bold"/>
+                <BoxView HeightRequest="2" Color="Silver"/>
+            </StackLayout>
+       
+                 
+                   
+                            <StackLayout Orientation="Horizontal" Padding="7">
+                                <Label  x:Name="Lb1" FontSize="22"/>
+                                <Label  x:Name="Namelb" HorizontalOptions="EndAndExpand" FontSize="22" HorizontalTextAlignment="End"/>
+                            </StackLayout>
+            <Button Text="Retry" x:Name="Retry" Clicked="Retry_Clicked"/>
+            <Button Text="MainMenu" x:Name="MainMenu" Clicked="MainMenu_Clicked"/>
+
+
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

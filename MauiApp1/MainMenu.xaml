@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainMenu"
+             xmlns:viewModel="clr-namespace:MauiApp1.ViewModels"
+             Title="MainMenu">
+    <ContentPage.BindingContext>
+        <viewModel:MainMenuViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <StackLayout>
+            <StackLayout BackgroundColor="AliceBlue" Padding="0,10">
+                <Label Text="High Score List" HorizontalTextAlignment="Center" FontSize="34" FontAttributes="Bold"/>
+                <BoxView HeightRequest="2" Color="Silver"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding ScoreList}" x:Name="scl">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="7">
+                                <Label Text="{Binding UserName}" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Score}" HorizontalOptions="CenterAndExpand"/>
+                               
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <Button Text="Exit" Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

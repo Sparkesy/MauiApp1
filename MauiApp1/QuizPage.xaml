@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MauiApp1.ViewModels"
+             x:Class="MauiApp1.QuizPage"
+             Title="QuizPage">
+    <ContentPage.BindingContext>
+        <viewModel:QuizViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <ListView x:Name="quizListView" ItemsSource="{Binding Questions}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding QuestionText}" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                <RadioButton  Content="{Binding AnswerChoices[0].Choice}" IsChecked="{Binding AnswerChoices[0].IsChecked}" GroupName="{Binding GroupId}" />
+                                <RadioButton   Content="{Binding AnswerChoices[1].Choice}" IsChecked="{Binding AnswerChoices[1].IsChecked}" GroupName="{Binding GroupId}" />
+                                <RadioButton   Content="{Binding AnswerChoices[2].Choice}" IsChecked="{Binding AnswerChoices[2].IsChecked}" GroupName="{Binding GroupId}"/>
+                                <RadioButton   Content="{Binding AnswerChoices[3].Choice}" IsChecked="{Binding AnswerChoices[3].IsChecked}" GroupName="{Binding GroupId}"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Button Text="Submit" Command="{Binding QuizSubmitCommand}"/>
+        <Label x:Name="ResultLabel" Text=""/>
+    </VerticalStackLayout>
+</ContentPage>

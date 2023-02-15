@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.AdminPage"
+             Title="AdminPage">
+    <VerticalStackLayout>
+      
+                <Label Text="Enter a question:" />
+                <Entry x:Name="questionEntry" />
+                <Label Text="Enter answer choices (separated by comma):" />
+                <Entry x:Name="answerEntry" />
+                <Label Text="Enter a Correct Answer:" />
+                <Entry x:Name="CorrectAnswer" />
+                <Button Text="Add Question" Clicked="Add_Question" />
+
+                <ListView x:Name="questionListView" />
+
+          
+
+   
+
+    </VerticalStackLayout>
+</ContentPage>
